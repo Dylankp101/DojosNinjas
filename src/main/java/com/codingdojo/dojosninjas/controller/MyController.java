@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -28,13 +29,15 @@ private DojosNinjasService dojosninjasService;
 		return "NewDojo.jsp";
 	}
 	@RequestMapping("/new/ninja")
-	public String newninjahome(Model model) {
+	public String newninjahome(@ModelAttribute("ninjas") Ninjas ninjas, Model model) {
 		List<Dojos> dojos = dojosninjasService.Dall();
-		model.addAllAttributes(dojos);	
+		model.addAttribute("dojos", dojos);	
 		return "NewNinja.jsp";
 	}
-	@RequestMapping("/showboth")
-	public String showboth() {
+	@RequestMapping("/showboth/{id}")
+	public String showboth(@PathVariable("id")Long id, Model model) {
+		Dojos dojos = dojosninjasService.findD(id);
+		model.addAttribute("dojos", dojos);
 		return "ShowBoth.jsp";
 	}
 	
@@ -56,6 +59,8 @@ private DojosNinjasService dojosninjasService;
         if (result.hasErrors()) {
             return "new.jsp";
         } else {
+//    	List<Dojos> dojos = dojosninjasService.Dall();
+//    	model.addAllAttributes(dojos);
 		dojosninjasService.createN(ninjas);
 		return "redirect:/new/dojo";
         }

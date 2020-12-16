@@ -22,13 +22,13 @@ pageEncoding="UTF-8"%>
     
     
 	    	<h1 class="text-center">NEW DOJO</h1>
-	    <form:form action="/create/dojo" method="post" modelAttribute="dojos">
+	    <form action="/create/dojo" method="post" modelAttribute="dojos">
 		    <div class="input-group mb-3">
 		  		<span class="input-group-text" id="basic-addon1">Dojo</span>
 		  		<input name="name" type="text" class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1">
 			</div>
 		    <button type="submit" class="btn btn-dark">Submit</button>
-		 </form:form> 
+		 </form> 
 	    
     
     

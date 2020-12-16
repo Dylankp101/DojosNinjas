@@ -18,37 +18,37 @@ pageEncoding="UTF-8"%>
 
 
 
-<div class="container">
+ <div class="container">
   <div class="row">
     <div class="col-sm">
     <h1 class="text-center">NEW NINJA</h1>
     	    <form:form action="/create/ninja" method="post" modelAttribute="ninjas">
     
-<%--     <select class="form-select" aria-label="Default select example">
-		  <option selected>Select Student</option>
-		  <c:forEach items="${dojos}" var="dojos">
-		  	<option value="${dojos.id}"><c:out value="${dojos.name}"/></option>
+     <form:select path="dojo" class="form-select" aria-label="Default select example">
+<!-- 		  <option selected>Select Student</option>
+ -->		  <c:forEach items="${dojos}" var="dojo">
+		  	<form:option value="${dojo.id}"><c:out value="${dojo.name}"/></form:option>
 		</c:forEach>
-	</select>
-     --%>
+	</form:select>
+  
      <div class="input-group mb-3 mt-3">
   		<span class="input-group-text" id="basic-addon1">First Name</span>
-  		<input name="firstName" type="text" class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1">
+  		<form:input path="firstName" type="text" class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1"/>
 	</div>
      <div class="input-group mb-3">
   		<span class="input-group-text" id="basic-addon1">Last Name</span>
-  		<input name="lastName" type="text" class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1">
+  		<form:input path="lastName" type="text" class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1"/>
 	</div>
     <div class="input-group mb-3">
   		<span class="input-group-text" id="basic-addon1">Age</span>
-  		<input name="age" type="text" class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1">
+  		<form:input path="age" type="text" class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1"/>
 	</div>
     <button type="submit" class="btn btn-dark">Dark</button>
     
     </form:form>
     </div>
   </div>
-</div>
+</div> 
 
 
 

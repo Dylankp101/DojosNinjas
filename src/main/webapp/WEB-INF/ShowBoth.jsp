@@ -12,7 +12,7 @@
 </head>
 <body>
 
-<h1>SHOW BOTH</h1>
+<h1 class="text-center">SHOW BOTH</h1>
 
 
 
@@ -23,6 +23,16 @@
 <div class="container">
   <div class="row">
     <div class="col-sm">
+    
+    
+    	<h1>${dojos.name}</h1>
+    	
+
+		<c:forEach items="${dojos.ninjas}" var="ninjas">
+			<h1>${ninjas.firstName} ${ninjas.lastName} ${ninjas.age}</h1>
+		</c:forEach>   
+		    
+    
     </div>
   </div>
 </div>
